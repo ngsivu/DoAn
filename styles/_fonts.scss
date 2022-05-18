@@ -1,0 +1,24 @@
+// font
+$blinker: 'Blinker';
+$aero: 'Aero';
+$helvetica: 'Helvetica';
+$bebas_neue: 'Bebas Neue';
+
+@font-face {
+  font-family: $blinker;
+  src: url('../public/fonts/Blinker-Regular.ttf');
+}
+
+@font-face {
+  font-family: $aero;
+  src: url('../public/fonts/Aero.ttf');
+}
+
+@font-face {
+  font-family: $helvetica;
+  src: url('../public/fonts/Helvetica.ttf');
+}
+@font-face {
+  font-family: $bebas_neue;
+  src: url('../public/fonts/BebasNeue-Regular.ttf');
+}
