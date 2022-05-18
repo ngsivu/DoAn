@@ -1,0 +1,9 @@
+@import './public/main';
+
+.app-layout {
+  height: 100%;
+
+  .ant-layout-sider-trigger {
+    display: none;
+  }
+}

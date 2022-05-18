@@ -1,0 +1,43 @@
+.home-page-filter {
+  display: flex;
+  align-items: center;
+
+  &__list {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 21px 31px;
+    height: 65px;
+    background: $color_firefly_linear;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 32px;
+
+    @media screen and (max-width: $breakpoint_small_tablet_max) {
+      width: 100%;
+      margin-bottom: 18px;
+      height: 45px;
+
+      span {
+        display: flex;
+        align-items: center;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 26px;
+        letter-spacing: 0.015em;
+      }
+    }
+  }
+
+  .label {
+    margin: 0 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.015em;
+    color: $color_tango;
+  }
+
+  img {
+    cursor: pointer;
+  }
+}

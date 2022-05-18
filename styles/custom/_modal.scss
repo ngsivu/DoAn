@@ -1,0 +1,23 @@
+.ant-modal {
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    top: 0;
+    max-width: none;
+    width: 100% !important;
+    padding: 0;
+    top: 0;
+  }
+}
+
+.ant-modal-content {
+  border-radius: 10px;
+  background: $color_firefly_linear;
+  box-shadow: unset;
+
+  .ant-modal-body {
+    padding: 0;
+  }
+}
+
+.ant-modal-mask {
+  background-color: rgba(0, 0, 0, 0.7);
+}

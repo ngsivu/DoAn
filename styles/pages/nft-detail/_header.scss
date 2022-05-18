@@ -1,0 +1,31 @@
+.nft-detail-page-header {
+  margin-bottom: 45px;
+
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    margin-bottom: 24px;
+  }
+
+  .header {
+    &__icon {
+      margin-right: 12px;
+    }
+
+    &__button {
+      padding: 16px;
+      border-radius: 0px 5px 5px 0px;
+      height: 65px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 0.015em;
+      color: $color_tango;
+      background: $color_firefly_linear;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        height: 42px;
+        font-size: 18px;
+        padding: 5px 18px;
+      }
+    }
+  }
+}

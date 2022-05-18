@@ -1,0 +1,54 @@
+.my-nfts-page-tab {
+  background-image: url('../../../public/images/content_background.png');
+  background-repeat: no-repeat;
+
+  .ant-tabs-nav {
+    &-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 82px;
+
+      @media screen and (max-width: $breakpoint_small_tablet_max) {
+        margin-bottom: 48px;
+        border-bottom: 1px solid $color_white_0_1;
+      }
+    }
+
+    &::before {
+      border-bottom: unset;
+    }
+
+    .ant-tabs-tab {
+      .ant-tabs-tab-btn {
+        font-family: $helvetica;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 30px;
+        text-align: center;
+        letter-spacing: 0.015em;
+        color: $color_white_0_5;
+        padding: 10px 0;
+
+        @media only screen and (max-width: $breakpoint_tablet_max) {
+          font-size: 24px;
+          line-height: 30px;
+        }
+      }
+
+      &-active {
+        .ant-tabs-tab-btn {
+          color: $color_tango;
+        }
+      }
+    }
+
+    .ant-tabs-ink-bar {
+      background-color: $color_tango;
+    }
+
+    .ant-tabs-nav-list {
+      margin-top: 55px;
+    }
+  }
+}

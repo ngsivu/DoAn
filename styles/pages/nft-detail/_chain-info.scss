@@ -1,0 +1,76 @@
+.nft-detail-chain-info {
+  background: $color_firefly_linear;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.005em;
+  color: $color_titan_white;
+  padding: 21px 11px 21px 38px;
+  border-radius: 5px;
+
+  &__header {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.015em;
+    color: $color_tango;
+    padding-bottom: 24px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+    align-items: center;
+
+    .info {
+      width: 50%;
+    }
+
+    .info-text {
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      height: 24px;
+
+      .app-address {
+        display: flex;
+        flex-direction: row;
+
+        &__icon {
+          padding-left: 5px;
+        }
+      }
+
+      .binance-icon {
+        height: 32px;
+        width: 32px;
+        padding-right: 12px;
+        padding-bottom: -8px;
+      }
+    }
+
+    .info-button {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      letter-spacing: 0.015em;
+      color: $color_tango;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      &__icon {
+        padding-left: 10px;
+      }
+
+      a {
+        color: $color_tango;
+      }
+    }
+
+    .app-link {
+      width: 50%;
+    }
+  }
+}

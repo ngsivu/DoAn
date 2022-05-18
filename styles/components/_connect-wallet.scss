@@ -1,0 +1,18 @@
+.connect-wallet {
+  &__icon {
+    padding-right: 5px;
+  }
+
+  &__button {
+    max-height: 40px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 21px;
+    letter-spacing: 0.04em;
+
+    .button--left {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
