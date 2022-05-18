@@ -1,0 +1,47 @@
+.wrong-network-modal {
+  padding: 53px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: $breakpoint_tablet_max) {
+    padding: 90px 10px;
+  }
+
+  .title {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: 0.015em;
+    color: $color_tango;
+    padding-top: 24px;
+
+    @media screen and (max-width: $breakpoint_tablet_max) {
+      font-size: 24px;
+    }
+  }
+
+  .sub-title {
+    padding-top: 24px;
+    max-width: 440px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    color: $color_titan_white;
+
+    @media screen and (max-width: $breakpoint_tablet_max) {
+      padding-top: 6px;
+      font-size: 14px;
+      width: 100%;
+    }
+  }
+
+  img {
+    width: 103px;
+    height: 103px;
+    object-fit: contain;
+  }
+}

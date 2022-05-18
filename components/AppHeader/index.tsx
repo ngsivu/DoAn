@@ -3,7 +3,7 @@ import Desktop from './Desktop';
 import AppLink from '../AppLink';
 import Notification from '../Notification';
 
-import AppIcon from 'public/images/app_logo.png';
+import AppIcon from 'public/images/app_icon.png';
 
 import { useMobile } from 'hooks/useWindowSize';
 import { useAppSelector } from 'hooks/useStore';
@@ -21,14 +21,14 @@ const Header: React.FC<HeaderProps> = () => {
   const { isMaintenance } = useGetConfig();
 
   return (
-    <header className="app-header">
-      <div className="container">
+    <header className='app-header'>
+      <div className='container'>
         <AppLink href={routeURLs.HOME}>
-          <img src={AppIcon} className="app-header__app-icon" />
+          <img src={AppIcon} className='app-header__app-icon' />
         </AppLink>
 
         {!isMaintenance && (
-          <div className="app-header__toogle">
+          <div className='app-header__toogle'>
             {isConnected && <Notification />}
             {isMobile ? <Mobile /> : <Desktop />}
           </div>

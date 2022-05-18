@@ -41,11 +41,11 @@ const Desktop = () => {
 
   const overlay = () => {
     return (
-      <div className="header-overlay">
-        <div className="item header-overlay__address border-bottom-none">
-          <AppAddress address={address} addressClassName="text" />
+      <div className='header-overlay'>
+        <div className='item header-overlay__address border-bottom-none'>
+          <AppAddress address={address} addressClassName='text' />
         </div>
-        <div className="item border-bottom-none" onClick={handleDisconnect}>
+        <div className='item border-bottom-none' onClick={handleDisconnect}>
           <img src={DisconnectIcon} />
           <span>{t('home.txt_disconnect')}</span>
         </div>
@@ -55,10 +55,10 @@ const Desktop = () => {
 
   return isConnected ? (
     <AppDropdown overlay={overlay}>
-      <AppButton text={shortenAddress(address)} variant="default" className="app-header__button" />
+      <AppButton text={shortenAddress(address)} variant='default' className='app-header__button' />
     </AppDropdown>
   ) : (
-    <ConnectWalletButton />
+    <ConnectWalletButton className='app-header__button' />
   );
 };
 

@@ -1,0 +1,127 @@
+.app-footer {
+  .footer-background {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    width: 100%;
+    height: 118px;
+    margin-top: 125px;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      margin-top: 40px;
+    }
+  }
+
+  &__body {
+    height: 195px;
+    padding: 30px 40px;
+    background: $color_black_pearl_linear_0_8;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.005em;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      height: auto;
+      font-size: 14px;
+      line-height: 28px;
+      padding: 15px 24px;
+    }
+
+    .app-logo {
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        width: 160px;
+        height: 30px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 24px;
+      text-transform: capitalize;
+      color: $color_tango;
+      padding-bottom: 20px;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        text-transform: capitalize;
+      }
+    }
+
+    .contact {
+      display: flex;
+      padding-bottom: 10px;
+
+      &__icon {
+        padding-right: 5px;
+      }
+    }
+
+    .ant-col {
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        width: 100%;
+      }
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        padding-bottom: 8px;
+      }
+    }
+
+    .app-button {
+      padding-bottom: 10px;
+    }
+
+    .description {
+      max-width: 270px;
+      padding-bottom: 20px;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        padding-top: 14px;
+      }
+
+      &__group-icon {
+        display: flex;
+
+        .icon {
+          padding-right: 15px;
+        }
+      }
+    }
+
+    a {
+      color: $color_titan_white;
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .copy-right {
+    background-color: $color_firefly;
+    color: $color_mischka_0_3;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      height: 32px;
+      font-size: 12px;
+      color: $color_mischka;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

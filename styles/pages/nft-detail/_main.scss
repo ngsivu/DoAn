@@ -1,0 +1,18 @@
+@import './header';
+@import './general';
+@import './footer';
+@import './attributes';
+@import './chain-info';
+
+.nft-detail-page {
+  &__wrapper {
+    padding-top: 110px;
+    background-image: url('../../../public/images/wrapper_background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      padding-top: 82px;
+    }
+  }
+}

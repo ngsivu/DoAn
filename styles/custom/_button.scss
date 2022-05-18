@@ -1,29 +1,24 @@
 // default
-$color_default_button_background: red;
-$color_default_button: black;
-$color_default_button_border: white;
+$color_default_button_background: $primary_color_button;
+$color_default_button: $color_white;
 
 // link
 $color_link_button_background: red;
 $color_link_button: black;
-$color_link_button_border: white;
 
 // primary
-$color_primary_button_background: red;
-$color_primary_button: black;
-$color_primary_button_border: white;
+$color_primary_button_background: $primary_color_button;
+$color_primary_button: $color_white;
 
 // secondary
-$color_secondary_button_background: red;
-$color_secondary_button: black;
-$color_secondary_button_border: white;
+$color_secondary_button_background: $color_tango;
+$color_secondary_button: $color_white;
 
 .ant-btn:hover {
   opacity: 0.8;
 }
 
 .button {
-  border: none;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
@@ -32,51 +27,47 @@ $color_secondary_button_border: white;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid $color_default_button_border;
-  border-radius: 10px;
+  height: 45px;
+  border-radius: 5px;
+  border: none;
 
   &:focus,
   &:active,
   &:hover {
     outline: none;
     box-shadow: none;
-    border: none;
   }
 
   &:disabled {
-    border: none;
+    opacity: 0.5;
   }
 
   &--default {
-    background-color: $color_default_button_background;
+    background: $color_default_button_background;
     color: $color_default_button;
-    border: 1px solid $color_default_button_border;
 
     &:focus,
     &:active,
     &:hover {
       color: $color_default_button;
-      background-color: $color_default_button_background;
-      border: 1px solid $color_default_button_border;
+      background: $color_default_button_background;
     }
 
     &:disabled {
-      border: none;
       color: $color_default_button;
+      background: $color_default_button_background;
     }
   }
 
   &--link {
     background-color: $color_link_button_background;
     color: $color_link_button;
-    border: 1px solid $color_link_button_border;
 
     &:focus,
     &:active,
     &:hover {
       color: $color_link_button;
       background-color: $color_link_button_background;
-      border: 1px solid $color_link_button_border;
     }
 
     &:disabled {
@@ -88,18 +79,16 @@ $color_secondary_button_border: white;
   &--primary {
     background-color: $color_primary_button_background;
     color: $color_primary_button;
-    border: 1px solid $color_primary_button_border;
 
     &:focus,
     &:active,
     &:hover {
       background-color: $color_primary_button_background;
       color: $color_primary_button;
-      border: 1px solid $color_primary_button_border;
     }
 
     &:disabled {
-      border: none;
+      background-color: $color_primary_button_background;
       color: $color_primary_button;
     }
   }
@@ -107,19 +96,16 @@ $color_secondary_button_border: white;
   &--secondary {
     background-color: $color_secondary_button_background;
     color: $color_secondary_button;
-    border: 1px solid $color_secondary_button_border;
 
     &:focus,
     &:active,
     &:hover {
       color: $color_secondary_button;
       background-color: $color_secondary_button_background;
-      border: 1px solid $color_secondary_button_border;
     }
 
     &:disabled {
       border: none;
-      color: $color_secondary_button;
     }
   }
 }

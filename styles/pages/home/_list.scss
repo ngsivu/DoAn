@@ -1,0 +1,96 @@
+.home-page-list {
+  flex: 1;
+
+  &__filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 32px;
+
+    @media screen and (max-width: $breakpoint_tablet_max) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--left {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .form-item {
+      display: inline-flex;
+      align-items: center;
+
+      .ant-select {
+        min-width: 142px;
+      }
+
+      &__label {
+        padding: 0px;
+        margin-right: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.005em;
+        color: $color_titan_white;
+      }
+    }
+  }
+
+  &__loading {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    row-gap: 24px;
+
+    @media screen and (max-width: $breakpoint_small_tablet_max) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+  }
+
+  &__full {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    @media screen and (max-width: $breakpoint_small_tablet_max) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 11px;
+    }
+  }
+
+  .app-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+
+    @media screen and (max-width: $breakpoint_small_tablet_max) {
+      .ant-pagination-prev {
+        border: unset;
+      }
+
+      .ant-pagination-next {
+        border: unset;
+      }
+
+      a {
+        height: 36px;
+        width: 36px;
+        line-height: 32px;
+      }
+
+      .ant-pagination-item-active {
+        a {
+          border: 1px solid $color_tango;
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+}

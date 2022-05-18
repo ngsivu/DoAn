@@ -1,0 +1,117 @@
+.my-nfts-page-search {
+  padding: 24px;
+  width: 100%;
+  max-width: 338px;
+  background: $color_firefly_linear;
+  border-radius: 0px 5px 5px 0px;
+
+  @media only screen and (max-width: $breakpoint_tablet_max) {
+    max-width: unset;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $breakpoint_tablet_max) {
+      &__text {
+        font-family: $helvetica;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.015em;
+        color: $color_tango;
+      }
+    }
+
+    &__title {
+      display: flex;
+      align-items: center;
+      .label {
+        margin: 0 12px;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 23px;
+        letter-spacing: 0.015em;
+        color: $color_tango;
+      }
+
+      img:first-child {
+        cursor: pointer;
+      }
+    }
+
+    &__clear {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      text-decoration-line: underline;
+      color: $color_athens_gray;
+      cursor: pointer;
+    }
+  }
+
+  .form {
+    margin-top: 32px;
+
+    .item {
+      .ant-divider {
+        border-top-color: $color_white_0_3;
+        margin: 32px 0 24px;
+
+        .ant-divider-inner-text {
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.005em;
+          color: $color_titan_white;
+        }
+      }
+    }
+
+    .form-item {
+      .attribute-item {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        row-gap: 18px;
+      }
+
+      @media only screen and (max-width: $breakpoint_tablet_max) {
+        .ant-checkbox {
+          height: 18px;
+          width: 18px;
+        }
+
+        .ant-checkbox-inner {
+          height: 16px;
+          width: 16px;
+        }
+
+        span {
+          line-height: 21px;
+          letter-spacing: 0.015em;
+        }
+      }
+
+      .ant-checkbox-inner {
+        border: unset;
+        box-sizing: border-box;
+        filter: drop-shadow(0px 0px 8px $color_lightning_yellow_0_85);
+        border-radius: 5px;
+      }
+
+      .ant-checkbox-inner::after {
+        border-right: 2px solid $color_tango !important;
+        border-bottom: 2px solid $color_tango !important;
+        left: 31%;
+      }
+
+      ::after {
+        border: unset;
+      }
+    }
+  }
+}

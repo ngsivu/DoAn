@@ -1,0 +1,10 @@
+.app-dropdown {
+  padding: 16px;
+  background: $color_blue_zodiac;
+  box-shadow: 0px 5px 5px $color_black_0_5;
+  border-radius: 5px;
+
+  @media screen and (max-width: $breakpoint_tablet_max) {
+    padding: 10px;
+  }
+}

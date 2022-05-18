@@ -1,0 +1,27 @@
+.app-header {
+  background-color: $color_white;
+  padding: 12px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  height: 65px;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__button {
+      background: #ef7224;
+      border-radius: 5px;
+    }
+  }
+
+  &__app-icon {
+    height: 40px;
+    width: 40px;
+  }
+}
