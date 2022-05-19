@@ -4,7 +4,7 @@ import { useWeb3React } from '@web3-react/core';
 import AppButton from '@components//AppButton';
 import AppAddress from '@components//AppAddress';
 import AppDropdown from '@components//AppDropdown';
-import ConnectWalletButton from '@components//ConnectWalletButton';
+import LoginButton from '@components//LoginButton';
 
 import DisconnectIcon from 'public/svg/disconnect_icon.svg';
 
@@ -58,7 +58,7 @@ const Desktop = () => {
       <AppButton text={shortenAddress(address)} variant='default' className='app-header__button' />
     </AppDropdown>
   ) : (
-    <ConnectWalletButton className='app-header__button' />
+    <LoginButton className='app-header__button' />
   );
 };
 

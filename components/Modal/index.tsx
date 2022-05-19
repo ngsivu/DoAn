@@ -19,7 +19,7 @@ const Modal: FC<{
   return (
     <ModalAntd
       footer={null}
-      wrapClassName="modal"
+      wrapClassName='modal'
       closable={false}
       width={width ?? 565}
       destroyOnClose={destroyOnClose}
@@ -28,9 +28,9 @@ const Modal: FC<{
       {...props}
     >
       <Fragment>
-        {showCloseIcon && <img src={CloseIcon} onClick={onClose} className="modal-close-icon cursor-pointer" />}
-        <div className="modal-wrap">
-          <Title level={5} className="title">
+        {showCloseIcon && <img src={CloseIcon} onClick={onClose} className='modal-close-icon cursor-pointer' />}
+        <div className='modal-wrap'>
+          <Title level={5} className='title'>
             {title}
           </Title>
           {children}
