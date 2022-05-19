@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Select } from 'antd';
 import { uniqBy } from 'lodash';
 
-import NodataIcon from 'resources/images/NodataIcon.png';
+import NodataIcon from 'public/images/nodata_icon.png';
 
 import { useDebounce } from 'hooks/useDebounce';
 import TIME_CONSTANTS from 'constants/time';
@@ -161,11 +161,11 @@ const InfinityScrollSelect: FC<{
         searchValue={searchValue}
         value={value?._id || value}
         onChange={handleChange}
-        optionLabelProp="name"
+        optionLabelProp='name'
         dropdownMatchSelectWidth
         notFoundContent={
-          <div className="ant-empty-text empty-text-select">
-            <img src={NodataIcon} alt="No Data" />
+          <div className='ant-empty-text empty-text-select'>
+            <img src={NodataIcon} alt='No Data' />
             <p>{emptyText ? emptyText : t('common.no_data')}</p>
           </div>
         }

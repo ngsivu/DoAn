@@ -6,7 +6,7 @@ import noop from 'lodash/noop';
 
 import AppLink from '@components//AppLink';
 import AppAddress from '@components//AppAddress';
-import ConnectWalletButton from '@components//ConnectWalletButton';
+import LoginButton from '@components//LoginButton';
 
 import AppIcon from 'public/images/app_logo.png';
 import MenuIcon from 'public/svg/menu_icon.svg';
@@ -101,7 +101,7 @@ const Mobile = () => {
         onClose={handleOpenMenu}
       >
         <div className='container'>
-          {!isConnected ? <ConnectWalletButton className='connect-wallet-mobile' /> : renderHeaderContent}
+          {!isConnected ? <LoginButton className='connect-wallet-mobile' /> : renderHeaderContent}
         </div>
       </Drawer>
     </div>
