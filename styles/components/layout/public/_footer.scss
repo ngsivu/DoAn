@@ -15,7 +15,7 @@
   &__body {
     height: 195px;
     padding: 30px 40px;
-    background: $color_black_pearl_linear_0_8;
+    background: white;
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.005em;
@@ -28,6 +28,8 @@
     }
 
     .app-logo {
+      width: 40px;
+      height: 40px;
       @media only screen and (max-width: $breakpoint_tablet_max) {
         width: 160px;
         height: 30px;
@@ -97,7 +99,7 @@
     }
 
     a {
-      color: $color_titan_white;
+      color: #45484e;
 
       @media only screen and (max-width: $breakpoint_tablet_max) {
         font-weight: 400;

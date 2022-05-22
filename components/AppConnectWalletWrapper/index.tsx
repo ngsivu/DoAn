@@ -53,27 +53,6 @@ const AppConnectWalletWrapper: FC<{
   }, [address, connectedWalletType, active]);
 
   useEffect(() => {
-    const setUpAddress = async () => {
-      if (account) {
-        const wallet = new MetamaskService().getInstance();
-
-        // check is admin
-        const isAdmin = await handleCheckIsAdmin(wallet);
-
-        if (!isAdmin) {
-          setupNetwork(chainId, library);
-          if (!listAddress?.[account]) {
-            handleLoginForFirstTime(wallet);
-          } else {
-            handleLoginWithExistedAccount(account);
-          }
-        }
-      }
-    };
-    setUpAddress();
-  }, [account, isConnectingWallet]);
-
-  useEffect(() => {
     walletConnect.on('Web3ReactDeactivate', () => {
       localStorage.removeItem(WALLET_CONNECT);
       walletConnect.walletConnectProvider = undefined;
@@ -104,69 +83,69 @@ const AppConnectWalletWrapper: FC<{
     }
   }, [address, account]);
 
-  const handleLoginForFirstTime = async (wallet: MetamaskService) => {
-    const signature = (await wallet.verifyLoginSignature({
-      creator: account as string,
-      library,
-      cancelMetamask: () => {
-        handleDisconnect();
-        handleCancelLoadingMetamask();
-      },
-    })) as string;
+  // const handleLoginForFirstTime = async (wallet: MetamaskService) => {
+  //   const signature = (await wallet.verifyLoginSignature({
+  //     creator: account as string,
+  //     library,
+  //     cancelMetamask: () => {
+  //       handleDisconnect();
+  //       handleCancelLoadingMetamask();
+  //     },
+  //   })) as string;
 
-    if (signature) {
-      handleLogin({
-        address: account as string,
-        signature,
-        success: () => {
-          dispatch(
-            handleAddAddressNetWork({
-              address: account,
-              signature,
-            }),
-          );
-          dispatch(
-            handleSetAddressNetwork({
-              chainId,
-              address: account,
-            }),
-          );
-        },
-        fail: handleLoginFailed,
-      });
-    }
-  };
+  //   if (signature) {
+  //     handleLogin({
+  //       address: account as string,
+  //       signature,
+  //       success: () => {
+  //         dispatch(
+  //           handleAddAddressNetWork({
+  //             address: account,
+  //             signature,
+  //           }),
+  //         );
+  //         dispatch(
+  //           handleSetAddressNetwork({
+  //             chainId,
+  //             address: account,
+  //           }),
+  //         );
+  //       },
+  //       fail: handleLoginFailed,
+  //     });
+  //   }
+  // };
 
-  const handleLoginWithExistedAccount = async (account: string) => {
-    handleLogin({
-      address: account as string,
-      signature: listAddress?.[account]?.signature as string,
-      success: () => {
-        dispatch(
-          handleSetAddressNetwork({
-            chainId,
-            address: account,
-          }),
-        );
-      },
-      fail: handleLoginFailed,
-    });
-  };
+  // const handleLoginWithExistedAccount = async (account: string) => {
+  //   handleLogin({
+  //     address: account as string,
+  //     signature: listAddress?.[account]?.signature as string,
+  //     success: () => {
+  //       dispatch(
+  //         handleSetAddressNetwork({
+  //           chainId,
+  //           address: account,
+  //         }),
+  //       );
+  //     },
+  //     fail: handleLoginFailed,
+  //   });
+  // };
 
   const handleLogin = async ({
-    address,
-    signature,
+    email,
+    password,
     success,
     fail,
   }: {
-    address: string;
-    signature: string;
+    email: string;
+    password: string;
     success: () => void;
     fail: () => void;
   }) => {
     const data = {
-      address,
-      signature,
+      email,
+      password,
     };
     try {
       const response = await loginServices.handleLogin(data);

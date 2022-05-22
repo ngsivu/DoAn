@@ -37,7 +37,7 @@ const getFullUrl = (url: string) => {
   if (!url.startsWith('/')) {
     url = '/' + url;
   }
-  return `${process.env.NEXT_PUBLIC_APP_API}` + url;
+  return `https://api.datsan.xyz/swagger` + url;
 };
 
 const resetToLogin = () => {
