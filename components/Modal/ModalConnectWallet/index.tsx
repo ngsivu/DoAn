@@ -14,6 +14,7 @@ import ConnectingIcon from 'public/svg/connecting_icon.svg';
 import { handleSetConnectModal, handleSetLoadingMetamask, handleSetWrongNetwork } from 'redux/connection/slice';
 import selectedConnection from 'redux/connection/selector';
 import { useAppDispatch, useAppSelector } from 'hooks/useStore';
+import loginServices from 'services/login';
 
 const ModalConnectWallet = () => {
   const { t } = useTranslation();
@@ -37,6 +38,7 @@ const ModalConnectWallet = () => {
   };
 
   const onFinish = (values?: any) => {
+    handleLogin(values);
     console.log('Finish:', values);
   };
 
@@ -48,6 +50,17 @@ const ModalConnectWallet = () => {
 
   const handleSignUp = () => {
     setIsShowSignUpModal(!isShowSignUpModal);
+  };
+
+  const handleLogin = async ({ email, password }: { email: string; password: string }) => {
+    const data = {
+      email,
+      password,
+    };
+    try {
+      const response = await loginServices.handleLogin(data);
+      console.log('response', response);
+    } catch (error) {}
   };
 
   const renderLogin = () => (
@@ -198,8 +211,6 @@ const ModalConnectWallet = () => {
       <Spin size='large' indicator={<LoadingIcon src={ConnectingIcon} />} />
     </div>
   );
-
-  const renderNoMetamask = () => <div className='popup_metamask'>{renderLoadingContent()}</div>;
 
   return (
     <Modal

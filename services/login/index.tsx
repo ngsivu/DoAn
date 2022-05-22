@@ -1,7 +1,7 @@
 import { api } from 'services/api';
 
 class LoginServices {
-  handleLogin = (data: { signature: string; address: string }) => {
+  handleLogin = (data: { email: string; password: string }) => {
     return api.post('auth/login', data);
   };
 }
