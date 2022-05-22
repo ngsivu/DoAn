@@ -21,12 +21,15 @@ const ModalConnectWallet = () => {
   const [form] = Form.useForm();
 
   const [isShowForgotModal, setIsShowForgotModal] = useState(false);
+  const [isShowSignUpModal, setIsShowSignUpModal] = useState(false);
 
   const { isShowConnectModal, isConnectingWallet } = useAppSelector(selectedConnection.getConnection);
 
-  console.log('isShowConnectModal :>> ', isShowConnectModal);
-
-  const handleHideModalConnectWallet = () => dispatch(handleSetConnectModal(false));
+  const handleHideModalConnectWallet = () => {
+    dispatch(handleSetConnectModal(false));
+    setIsShowForgotModal(false);
+    setIsShowSignUpModal(false);
+  };
 
   const handleCloseModalConnectWallet = () => {
     handleHideModalConnectWallet();
@@ -40,12 +43,14 @@ const ModalConnectWallet = () => {
   const aaa = () => {};
 
   const handleForgotPassword = () => {
-    handleHideModalConnectWallet();
-    setIsShowForgotModal(true);
+    setIsShowForgotModal(!isShowForgotModal);
   };
-  console.log('isShowForgotModal', isShowForgotModal);
 
-  const renderConnectWallet = () => (
+  const handleSignUp = () => {
+    setIsShowSignUpModal(!isShowSignUpModal);
+  };
+
+  const renderLogin = () => (
     <div className='wallet-modal'>
       <p className='title'>Welcome Back!</p>
       <img src={AppIcon} className='app-icon' />
@@ -60,8 +65,8 @@ const ModalConnectWallet = () => {
         >
           <Form.Item
             label='Email address'
-            name='username'
-            rules={[{ required: true, message: 'Please input your username!' }]}
+            name='email'
+            rules={[{ required: true, message: 'Please input your email!' }]}
           >
             <Input
               prefix={<UserOutlined className='site-form-item-icon' />}
@@ -73,7 +78,7 @@ const ModalConnectWallet = () => {
             className='form-item-password'
             label='Password'
             name='password'
-            rules={[{ required: true, message: 'Please input your username!' }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password
               prefix={<LockOutlined className='site-form-item-icon' />}
@@ -90,7 +95,7 @@ const ModalConnectWallet = () => {
         </Form>
         <div className='sign-up'>
           <div className='sign-up__text'>{`Don't have an account?`}&nbsp;</div>
-          <span onClick={aaa}>Sign Up</span>
+          <span onClick={handleSignUp}>Sign Up</span>
         </div>
       </div>
     </div>
@@ -98,7 +103,7 @@ const ModalConnectWallet = () => {
 
   const renderForgotPassword = () => (
     <div className='wallet-modal'>
-      <p className='title'>Welcome Back!</p>
+      <p className='title'>Lấy lại mật khẩu</p>
       <img src={AppIcon} className='app-icon' />
       <div className='wallet-modal__body'>
         <Form
@@ -111,8 +116,50 @@ const ModalConnectWallet = () => {
         >
           <Form.Item
             label='Email address'
+            name='email'
+            rules={[{ required: true, message: 'Please input your email!' }]}
+          >
+            <Input
+              prefix={<UserOutlined className='site-form-item-icon' />}
+              placeholder='Enter your email'
+              className='form-item-input'
+            />
+          </Form.Item>
+          <AppButton htmlType='submit' text='Send Password' onClick={aaa}></AppButton>
+        </Form>
+      </div>
+    </div>
+  );
+
+  const renderSignUp = () => (
+    <div className='wallet-modal'>
+      <p className='title'>Sign Up</p>
+      <img src={AppIcon} className='app-icon' />
+      <div className='wallet-modal__body'>
+        <Form
+          form={form}
+          name='basic'
+          layout='vertical'
+          initialValues={{ remember: true }}
+          autoComplete='off'
+          onFinish={onFinish}
+        >
+          <Form.Item
+            label='Your Name'
             name='username'
             rules={[{ required: true, message: 'Please input your username!' }]}
+          >
+            <Input
+              prefix={<UserOutlined className='site-form-item-icon' />}
+              placeholder='Enter your name'
+              className='form-item-input'
+            />
+          </Form.Item>
+
+          <Form.Item
+            label='Email address'
+            name='email'
+            rules={[{ required: true, message: 'Please input your email!' }]}
           >
             <Input
               prefix={<UserOutlined className='site-form-item-icon' />}
@@ -124,7 +171,7 @@ const ModalConnectWallet = () => {
             className='form-item-password'
             label='Password'
             name='password'
-            rules={[{ required: true, message: 'Please input your username!' }]}
+            rules={[{ required: true, message: 'Please input your password!' }]}
           >
             <Input.Password
               prefix={<LockOutlined className='site-form-item-icon' />}
@@ -133,15 +180,12 @@ const ModalConnectWallet = () => {
               className='form-item-input'
             />
           </Form.Item>
-
-          <span className='forgot-password' onClick={handleForgotPassword}>
-            Forgot your password?
-          </span>
-          <AppButton htmlType='submit' text='Login' onClick={aaa}></AppButton>
+          <span className='forgot-password'></span>
+          <AppButton htmlType='submit' text='Sign Up' onClick={aaa}></AppButton>
         </Form>
         <div className='sign-up'>
-          <div className='sign-up__text'>{`Don't have an account?`}&nbsp;</div>
-          <span onClick={aaa}>Sign Up</span>
+          <div className='sign-up__text'>{`Already have an account?`}&nbsp;</div>
+          <span onClick={handleSignUp}>Sign In</span>
         </div>
       </div>
     </div>
@@ -161,11 +205,12 @@ const ModalConnectWallet = () => {
     <Modal
       visible={isShowConnectModal || isConnectingWallet}
       onClose={handleCloseModalConnectWallet}
-      showCloseIcon={isShowConnectModal}
+      showCloseIcon
       width={450}
     >
-      {isShowConnectModal && renderConnectWallet()}
-      {/* {isShowForgotModal && renderForgotPassword()} */}
+      {!(isShowForgotModal || isShowSignUpModal) && renderLogin()}
+      {isShowForgotModal && renderForgotPassword()}
+      {isShowSignUpModal && renderSignUp()}
     </Modal>
   );
 };
